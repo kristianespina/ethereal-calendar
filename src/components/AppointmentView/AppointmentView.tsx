@@ -88,6 +88,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
         const response = await editSchedule(data);
         if (response.status === 200) {
           // Update store
+          onClose && onClose();
           dispatch(edit(response.data));
           showSuccess("Successfully edited the schedule");
         } else {
@@ -107,7 +108,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
       };
       const response = await addSchedule(data);
       if (response.status === 201) {
-        // Created
+        // Update store
         onClose && onClose();
         dispatch(add(response.data));
         showSuccess("Successfully created schedule");
