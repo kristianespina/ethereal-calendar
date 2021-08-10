@@ -4,6 +4,7 @@ import { Text, Input, Box } from "@chakra-ui/react";
 type Props = {
   label: string;
   placeholder?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 const InputBox = ({ label, placeholder }: Props) => {
   return (
