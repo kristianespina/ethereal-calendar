@@ -33,13 +33,7 @@ const Header = () => {
       <DialogBox
         isOpen={isOpen}
         onClose={onClose}
-        component={
-          <AppointmentView
-            showDeleteButton={false}
-            actionCaption="Add"
-            showHeaders={false}
-          />
-        }
+        component={<AppointmentView isUpdate={false} />}
       />
     </>
   );
