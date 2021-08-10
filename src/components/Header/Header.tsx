@@ -33,7 +33,7 @@ const Header = () => {
       <DialogBox
         isOpen={isOpen}
         onClose={onClose}
-        component={<AppointmentView isUpdate={false} />}
+        component={<AppointmentView isUpdate={false} onClose={onClose} />}
       />
     </>
   );

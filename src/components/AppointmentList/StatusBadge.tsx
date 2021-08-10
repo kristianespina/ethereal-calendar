@@ -6,19 +6,25 @@ import { Status } from "../../constants/enums";
 type Props = {
   status: Status;
 };
-const { DROPPED, PENDING, ONGOING, DONE } = Status;
-const COLORS = {
-  [DROPPED]: { color: "red.500", bgColor: "red.200" },
-  [PENDING]: { color: "gray.500", bgColor: "gray.200" },
-  [ONGOING]: { color: "blue.500", bgColor: "blue.200" },
-  [DONE]: { color: "green.500", bgColor: "green.200" },
+
+const getColor = (status: Status) => {
+  switch (status as any) {
+    case "dropped":
+      return { color: "red.500", bgColor: "red.200" };
+    case "pending":
+      return { color: "gray.500", bgColor: "gray.200" };
+    case "ongoing":
+      return { color: "blue.500", bgColor: "blue.200" };
+    case "done":
+      return { color: "green.500", bgColor: "green.200" };
+  }
 };
 
 const StatusBadge = ({ status }: Props) => {
   return (
     <Box
-      bgColor={COLORS[status].bgColor}
-      color={COLORS[status].color}
+      bgColor={getColor(status)?.bgColor}
+      color={getColor(status)?.color}
       px={3}
       py={0.25}
       borderRadius={16}

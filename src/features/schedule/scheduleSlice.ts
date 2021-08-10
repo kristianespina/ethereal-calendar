@@ -16,11 +16,13 @@ export const scheduleSlice = createSlice({
       return {
         ...state,
         list: action.payload,
-        selected: undefined, // Set selected back to undefined
       };
     },
     select: (state, action: PayloadAction<number>) => {
-      state.selected = action.payload;
+      state.selected = state.list.find((el) => el.id === action.payload);
+    },
+    clearSelected: (state) => {
+      state.selected = undefined;
     },
     removeById: (state, action: PayloadAction<number>) => {
       state.list = state.list.filter((el) => el.id !== action.payload);
@@ -36,7 +38,7 @@ export const scheduleSlice = createSlice({
   },
 });
 
-export const { updateSchedule, select, removeById, edit, add } =
+export const { updateSchedule, select, clearSelected, removeById, edit, add } =
   scheduleSlice.actions;
 
 export default scheduleSlice.reducer;

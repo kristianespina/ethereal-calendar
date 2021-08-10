@@ -1,8 +1,2 @@
-enum Status {
-  DROPPED = "dropped",
-  PENDING = "pending",
-  ONGOING = "ongoing",
-  DONE = "done",
-}
-
-export { Status };
+import { STATUS } from "./constants";
+export type Status = typeof STATUS | string | undefined;

@@ -9,5 +9,5 @@ export type Schedule = {
 
 export type ScheduleState = {
   list: Schedule[];
-  selected?: number;
+  selected?: Schedule;
 };

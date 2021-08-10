@@ -6,10 +6,10 @@ import DatePicker from "./DatePicker";
 type Props = {
   label: string;
   placeholder?: string;
-  onChange: (d: any) => void;
-  selectedDate: Date;
+  onChange: (d: Date) => void;
+  value?: Date;
 };
-const DateInput = ({ label, placeholder, onChange, selectedDate }: Props) => {
+const DateInput = ({ value, label, placeholder, onChange }: Props) => {
   return (
     <Box>
       <Text fontWeight="bold" fontSize={12} mb={1}>
@@ -18,7 +18,8 @@ const DateInput = ({ label, placeholder, onChange, selectedDate }: Props) => {
       <DatePicker
         placeholderText={placeholder}
         onChange={onChange}
-        selected={selectedDate}
+        selected={value}
+        required
       />
     </Box>
   );

@@ -9,6 +9,7 @@ const Error404 = () => {
       alignContent="center"
       alignItems="center"
       justifyContent="center"
+      w="full"
     >
       <Image src={Rocket} maxW={300} />
       <Text fontWeight="bold" fontSize={18}>

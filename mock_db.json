@@ -1,22 +1,10 @@
 {
   "schedule": [
     {
-      "id": 1,
-      "name": "Meeting A",
-      "status": "pending",
-      "date": "2021-08-7T08:58:49.640Z"
-    },
-    {
-      "id": 2,
-      "name": "Meeting B",
-      "status": "dropped",
-      "date": "2021-08-8T08:58:49.640Z"
-    },
-    {
       "id": 3,
       "name": "Meeting C",
       "status": "ongoing",
-      "date": "2021-08-9T08:58:49.640Z"
+      "date": "2021-08-09T08:58:49.640Z"
     },
     {
       "id": 4,
@@ -27,8 +15,14 @@
     {
       "name": "Meeting E",
       "status": "pending",
-      "date": "2021-08-7T08:58:49.640Z",
+      "date": "2021-08-07T08:58:49.640Z",
       "id": 5
+    },
+    {
+      "name": "Hello Test",
+      "status": "dropped",
+      "date": "2021-08-10T13:15:19.908Z",
+      "id": 8
     }
   ]
 }
