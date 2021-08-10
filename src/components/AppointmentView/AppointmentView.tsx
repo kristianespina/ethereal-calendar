@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Flex, Box, Button, Spacer } from "@chakra-ui/react";
-
-import { DatePicker, TextInput } from "../Input";
-import { log } from "util";
-import DateInput from "../Input/DateInput";
+// components
+import { TextInput, DateInput } from "../Input";
+// hooks
+import { useAppDispatch } from "../../app/hooks";
+import { updateSchedule } from "../../features/schedule/scheduleSlice";
+import SelectInput from "../Input/SelectInput";
 
 type Props = {
-  showHeaders?: boolean;
-  actionCaption: string;
-  showDeleteButton?: boolean;
+  isUpdate?: boolean;
 };
 
-const AppointmentView: React.FC<Props> = ({
-  showHeaders,
-  actionCaption,
-  showDeleteButton,
-}) => {
-  const display = showHeaders ? "flex" : "none";
+const AppointmentView: React.FC<Props> = ({ isUpdate }) => {
+  const display = isUpdate ? "flex" : "none";
+  const actionCaption = isUpdate ? "Update" : "Create";
+  const dispatch = useAppDispatch();
+  const handleSubmit = () => {
+    if (isUpdate) {
+      console.log("Updated");
+    }
+  };
   return (
     <Flex direction="column" w="full" gridGap={4}>
       {/* Title */}
@@ -46,22 +49,23 @@ const AppointmentView: React.FC<Props> = ({
         </Box>
       </Flex>
       {/* Contents */}
-      <TextInput label="Title" placeholder="Enter appointment title" />
-
-      <DateInput
-        label="Date"
-        placeholder="Select schedule date"
-        onChange={(d) => {
-          console.log(d);
-        }}
-        selectedDate={new Date()}
-      />
-      <TextInput label="Status" placeholder="Enter status" />
-      <Flex direction="row" mt={4}>
-        {showDeleteButton && <Button>Delete</Button>}
-        <Spacer />
-        <Button colorScheme="green">{actionCaption}</Button>
-      </Flex>
+      <form onSubmit={handleSubmit}>
+        <TextInput label="Title" placeholder="Enter appointment title" />
+        <DateInput
+          label="Date"
+          placeholder="Select schedule date"
+          onChange={(d) => {
+            console.log(d);
+          }}
+          selectedDate={new Date()}
+        />
+        <SelectInput label="Status" placeholder="Choose status" />
+        <Flex direction="row" mt={4}>
+          {isUpdate && <Button>Delete</Button>}
+          <Spacer />
+          <Button colorScheme="green">{actionCaption}</Button>
+        </Flex>
+      </form>
     </Flex>
   );
 };
