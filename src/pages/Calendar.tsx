@@ -20,11 +20,7 @@ const Calendar = () => {
           </Box>
           <Box flexGrow={1} display={displayVariant}>
             {/* <Error404 /> */}
-            <AppointmentView
-              showDeleteButton={true}
-              actionCaption="Update"
-              showHeaders={true}
-            />
+            <AppointmentView isUpdate={true} />
           </Box>
         </Flex>
       </Box>
