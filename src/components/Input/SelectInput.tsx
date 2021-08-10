@@ -2,7 +2,6 @@ import React from "react";
 import { Text, Select, Box } from "@chakra-ui/react";
 
 import { STATUS } from "../../constants/constants";
-import { Status } from "../../constants/enums";
 
 type Props = {
   value?: string;

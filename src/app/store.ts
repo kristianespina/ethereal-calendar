@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import scheduleReducer from "../features/schedule/scheduleSlice";
 
 export const store = configureStore({
