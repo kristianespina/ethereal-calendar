@@ -9,7 +9,7 @@ import { About, Calendar } from "./pages";
 function App() {
   return (
     <Router>
-      <Flex>
+      <Flex direction={["column", "column", "row", "row"]} minH="100vh">
         <Sidebar />
         <Flex
           bgColor="gray.200"

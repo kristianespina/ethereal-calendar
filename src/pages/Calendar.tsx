@@ -13,13 +13,17 @@ const Calendar = () => {
         <Header />
       </Box>
       <Box bgColor="white" px={4} py={8} borderRadius={12}>
-        <Flex direction={["column", "column", "row", "row"]}>
+        <Flex direction={["column", "column", "row", "row"]} gridGap={4}>
           <Box minW={["full", "full", "240px", "240px"]}>
             <AppointmentList />
           </Box>
           <Box flexGrow={1}>
             {/* <Error404 /> */}
-            <AppointmentView />
+            <AppointmentView
+              showDeleteButton={true}
+              actionCaption="Update"
+              showHeaders={true}
+            />
           </Box>
         </Flex>
       </Box>
