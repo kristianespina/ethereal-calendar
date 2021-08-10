@@ -1,0 +1,34 @@
+{
+  "schedule": [
+    {
+      "id": 1,
+      "name": "Meeting A",
+      "status": "pending",
+      "date": "2021-08-7T08:58:49.640Z"
+    },
+    {
+      "id": 2,
+      "name": "Meeting B",
+      "status": "dropped",
+      "date": "2021-08-8T08:58:49.640Z"
+    },
+    {
+      "id": 3,
+      "name": "Meeting C",
+      "status": "ongoing",
+      "date": "2021-08-9T08:58:49.640Z"
+    },
+    {
+      "id": 4,
+      "name": "Meeting D",
+      "status": "done",
+      "date": "2021-08-10T08:58:49.640Z"
+    },
+    {
+      "name": "Meeting E",
+      "status": "pending",
+      "date": "2021-08-7T08:58:49.640Z",
+      "id": 5
+    }
+  ]
+}
