@@ -1,22 +1,10 @@
 import React from "react";
-import {
-  Flex,
-  Image,
-  Text,
-  Button,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalHeader,
-  ModalContent,
-  ModalFooter,
-  ModalCloseButton,
-  ModalBody,
-} from "@chakra-ui/react";
+import { Flex, Image, Text, Button, useDisclosure } from "@chakra-ui/react";
 
 import { AppointmentView } from "../AppointmentView";
 
 import Bunny from "../../assets/bunny.svg";
+import { DialogBox } from "../DialogBox";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -42,20 +30,17 @@ const Header = () => {
         </Flex>
       </Flex>
 
-      <Modal onClose={onClose} isOpen={isOpen} isCentered>
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Create appointment</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <AppointmentView
-              showDeleteButton={false}
-              actionCaption="Add"
-              showHeaders={false}
-            />
-          </ModalBody>
-        </ModalContent>
-      </Modal>
+      <DialogBox
+        isOpen={isOpen}
+        onClose={onClose}
+        component={
+          <AppointmentView
+            showDeleteButton={false}
+            actionCaption="Add"
+            showHeaders={false}
+          />
+        }
+      />
     </>
   );
 };

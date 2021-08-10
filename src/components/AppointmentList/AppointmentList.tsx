@@ -18,7 +18,12 @@ const Appointment = () => {
         <Text fontSize={18} fontWeight="bold" mb={4} ml={3}>
           Appointments
         </Text>
-        <Flex direction="column" gridGap={4}>
+        <Flex
+          direction="column"
+          gridGap={4}
+          overflow="scroll"
+          maxH={["auto", "auto", "350px", "350px"]}
+        >
           <AppointmentEntry
             title="Meeting A"
             date="January 01, 2021"
@@ -33,6 +38,16 @@ const Appointment = () => {
             title="Meeting A"
             date="January 01, 2021"
             status={Status.ONGOING}
+          />
+          <AppointmentEntry
+            title="Meeting A"
+            date="January 01, 2021"
+            status={Status.DONE}
+          />
+          <AppointmentEntry
+            title="Meeting A"
+            date="January 01, 2021"
+            status={Status.DONE}
           />
           <AppointmentEntry
             title="Meeting A"

@@ -17,6 +17,7 @@ function App() {
           alignContent="center"
           justifyContent="center"
           alignItems="center"
+          flexGrow={1}
         >
           <Switch>
             <Route path="/about" component={About} />

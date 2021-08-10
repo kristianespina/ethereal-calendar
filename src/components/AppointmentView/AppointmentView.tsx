@@ -9,11 +9,11 @@ type Props = {
   showDeleteButton?: boolean;
 };
 
-const AppointmentView = ({
+const AppointmentView: React.FC<Props> = ({
   showHeaders,
   actionCaption,
   showDeleteButton,
-}: Props) => {
+}) => {
   const display = showHeaders ? "flex" : "none";
   return (
     <Flex direction="column" w="full" gridGap={4}>
