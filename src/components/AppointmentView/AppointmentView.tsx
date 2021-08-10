@@ -1,7 +1,9 @@
 import React from "react";
 import { Flex, Box, Button, Spacer } from "@chakra-ui/react";
 
-import InputBox from "./InputBox";
+import { DatePicker, TextInput } from "../Input";
+import { log } from "util";
+import DateInput from "../Input/DateInput";
 
 type Props = {
   showHeaders?: boolean;
@@ -44,9 +46,17 @@ const AppointmentView: React.FC<Props> = ({
         </Box>
       </Flex>
       {/* Contents */}
-      <InputBox label="Title" placeholder="Enter appointment title" />
-      <InputBox label="Date" placeholder="Select appointment date" />
-      <InputBox label="Status" placeholder="Enter status" />
+      <TextInput label="Title" placeholder="Enter appointment title" />
+
+      <DateInput
+        label="Date"
+        placeholder="Select schedule date"
+        onChange={(d) => {
+          console.log(d);
+        }}
+        selectedDate={new Date()}
+      />
+      <TextInput label="Status" placeholder="Enter status" />
       <Flex direction="row" mt={4}>
         {showDeleteButton && <Button>Delete</Button>}
         <Spacer />
