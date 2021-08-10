@@ -19,7 +19,7 @@ const Sidebar = () => {
 
   return (
     <Flex
-      w={["auto", "auto", "388px", "388px"]}
+      w={["auto", "auto", "auto", "388px"]}
       maxW="388px"
       h="100%"
       p={[0, 0, 4, 4]}
@@ -29,7 +29,7 @@ const Sidebar = () => {
         size="lg"
         bgColor="white"
         icon={<HamburgerIcon />}
-        display={["flex", "flex", "none", "none"]}
+        display={["flex", "flex", "flex", "none"]}
         ref={btnRef}
         onClick={onOpen}
       />
@@ -59,7 +59,7 @@ const Sidebar = () => {
       <Flex
         direction="column"
         w="100%"
-        display={["none", "none", "flex", "flex"]}
+        display={["none", "none", "none", "flex"]}
       >
         <Content />
       </Flex>

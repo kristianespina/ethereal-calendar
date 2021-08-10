@@ -9,7 +9,7 @@ import { About, Calendar } from "./pages";
 function App() {
   return (
     <Router>
-      <Flex direction={["column", "column", "row", "row"]} minH="100vh">
+      <Flex direction={["column", "column", "column", "row"]} minH="100vh">
         <Sidebar />
         <Flex
           bgColor="gray.200"
@@ -18,6 +18,7 @@ function App() {
           justifyContent="center"
           alignItems="center"
           flexGrow={1}
+          p={4}
         >
           <Switch>
             <Route path="/about" component={About} />

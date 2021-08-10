@@ -131,7 +131,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
     dispatch(clearSelected());
   };
   return (
-    <Flex direction="column" w="full" gridGap={4}>
+    <Flex direction="column" w="full" gridGap={4} justifyContent="center">
       {/* Title */}
       <Flex direction="row" w="full" display={display}>
         <Box
@@ -160,32 +160,34 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
         </Box>
       </Flex>
       {/* Contents */}
-      <form onSubmit={handleSubmit}>
-        <TextInput
-          label="Title"
-          placeholder="Enter appointment title"
-          value={title}
-          onChange={onChangeTitle}
-        />
 
-        <DateInput
-          label="Date"
-          placeholder="Select schedule date"
-          value={date}
-          onChange={onChangeDate}
-        />
-        <SelectInput
-          label="Status"
-          placeholder="Choose status"
-          value={String(status)}
-          onChange={onChangeStatus}
-        />
-        <Flex direction="row" mt={4}>
-          {isUpdate && <Button onClick={handleDelete}>Delete</Button>}
-          <Spacer />
-          <Button type="submit" colorScheme="green">
-            {actionCaption}
-          </Button>
+      <form onSubmit={handleSubmit}>
+        <Flex direction="column" gridGap={4}>
+          <TextInput
+            label="Title"
+            placeholder="Enter appointment title"
+            value={title}
+            onChange={onChangeTitle}
+          />
+          <DateInput
+            label="Date"
+            placeholder="Select schedule date"
+            value={date}
+            onChange={onChangeDate}
+          />
+          <SelectInput
+            label="Status"
+            placeholder="Choose status"
+            value={String(status)}
+            onChange={onChangeStatus}
+          />
+          <Flex direction="row" mt={4}>
+            {isUpdate && <Button onClick={handleDelete}>Delete</Button>}
+            <Spacer />
+            <Button type="submit" colorScheme="green">
+              {actionCaption}
+            </Button>
+          </Flex>
         </Flex>
       </form>
     </Flex>
