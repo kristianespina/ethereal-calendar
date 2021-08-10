@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Text } from "@chakra-ui/react";
 
 // Local Assets
@@ -18,9 +19,15 @@ const Content = () => {
       </Text>
 
       {/* Menu */}
-      <MenuEntry name="Home" icon={Home} selected={true} />
-      <MenuEntry name="About" icon={About} selected={false} />
-      <MenuEntry name="Report" icon={Report} selected={false} />
+      <Link to="/">
+        <MenuEntry name="Home" icon={Home} selected={true} />
+      </Link>
+      <Link to="/about">
+        <MenuEntry name="About" icon={About} selected={false} />
+      </Link>
+      <a href="https://github.com/kristianespina/ethereal-calendar/issues">
+        <MenuEntry name="Report" icon={Report} selected={false} />
+      </a>
     </>
   );
 };
