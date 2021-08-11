@@ -25,11 +25,11 @@ This project is made using the following technologies:
 
 ### Desktop
 
-![Homepage Screenshot](docs/desktop-screenshot.png)
+![Homepage Screenshot](docs/desktop-webapp.png)
 
 ### Mobile
 
-![Homepage Screenshot](docs/mobile.png)
+![Homepage Screenshot](docs/mobile-webapp.png)
 
 ## Getting Started
 
