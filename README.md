@@ -25,7 +25,7 @@ This project is made using the following technologies:
 
 ### Desktop
 
-![Homepage Screenshot](docs/desktop.png)
+![Homepage Screenshot](docs/desktop-screenshot.png)
 
 ### Mobile
 
