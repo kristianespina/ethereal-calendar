@@ -129,6 +129,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
   };
   const handleBack = async () => {
     dispatch(clearSelected());
+    onClose && onClose();
   };
   return (
     <Flex direction="column" w="full" gridGap={4} justifyContent="center">
