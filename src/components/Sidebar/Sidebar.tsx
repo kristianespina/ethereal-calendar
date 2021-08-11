@@ -19,8 +19,8 @@ const Sidebar = () => {
 
   return (
     <Flex
-      w={["auto", "auto", "auto", "388px"]}
-      maxW="388px"
+      w={["auto", "auto", "auto", "300px"]}
+      maxW="300px"
       h="100%"
       p={[0, 0, 4, 4]}
     >
