@@ -63,8 +63,11 @@ const Appointment = () => {
           <Flex
             direction="column"
             gridGap={4}
-            overflow="scroll"
+            overflowY="hidden"
             maxH={["auto", "auto", "350px", "350px"]}
+            _hover={{
+              overflowY: "auto",
+            }}
           >
             {list.map((entry) => (
               <AppointmentEntry
