@@ -3,8 +3,8 @@ import { Schedule } from "../types/schedule";
 
 const API_URL = process.env.REACT_APP_API_HOST;
 
-export const getSchedule = async () => {
-  return await axios.get(`${API_URL}/schedule`);
+export const getSchedule = async (filters = "") => {
+  return await axios.get(`${API_URL}/schedule${filters}`);
 };
 
 export const addSchedule = async (schedule: Partial<Schedule>) => {

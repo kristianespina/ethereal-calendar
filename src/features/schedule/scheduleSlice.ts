@@ -6,6 +6,7 @@ import { ScheduleState, Schedule } from "../../types/schedule";
 const initialState: ScheduleState = {
   list: [],
   selected: undefined,
+  filter: "",
 };
 
 export const scheduleSlice = createSlice({
@@ -35,10 +36,20 @@ export const scheduleSlice = createSlice({
     add: (state, action: PayloadAction<Schedule>) => {
       state.list.unshift(action.payload);
     },
+    setFilter: (state, action: PayloadAction<string>) => {
+      state.filter = action.payload;
+    },
   },
 });
 
-export const { updateSchedule, select, clearSelected, removeById, edit, add } =
-  scheduleSlice.actions;
+export const {
+  updateSchedule,
+  select,
+  clearSelected,
+  removeById,
+  edit,
+  add,
+  setFilter,
+} = scheduleSlice.actions;
 
 export default scheduleSlice.reducer;

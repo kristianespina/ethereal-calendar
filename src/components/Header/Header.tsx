@@ -5,9 +5,16 @@ import { AppointmentView } from "../AppointmentView";
 
 import Bunny from "../../assets/bunny.svg";
 import { DialogBox } from "../DialogBox";
+import { Filter } from "../Filter";
 
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isOpenFilter,
+    onOpen: onOpenFilter,
+    onClose: onCloseFilter,
+  } = useDisclosure();
+
   return (
     <>
       <Flex direction="row" gridGap={4}>
@@ -24,9 +31,19 @@ const Header = () => {
           <Text fontSize={36} fontWeight="bold">
             Kristian Espina
           </Text>
-          <Button colorScheme="blue" size="sm" onClick={onOpen}>
-            Create appointment
-          </Button>
+          <Flex direction="row" gridGap={4}>
+            <Button colorScheme="blue" size="sm" onClick={onOpen}>
+              Create appointment
+            </Button>
+            <Button
+              colorScheme="blue"
+              size="sm"
+              variant="link"
+              onClick={onOpenFilter}
+            >
+              Filter
+            </Button>
+          </Flex>
         </Flex>
       </Flex>
 
@@ -34,6 +51,12 @@ const Header = () => {
         isOpen={isOpen}
         onClose={onClose}
         component={<AppointmentView isUpdate={false} onClose={onClose} />}
+      />
+
+      <DialogBox
+        isOpen={isOpenFilter}
+        onClose={onCloseFilter}
+        component={<Filter onClose={onCloseFilter} />}
       />
     </>
   );

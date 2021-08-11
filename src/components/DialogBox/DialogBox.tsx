@@ -2,7 +2,6 @@ import React from "react";
 import {
   Modal,
   ModalOverlay,
-  ModalHeader,
   ModalContent,
   ModalCloseButton,
   ModalBody,
@@ -18,7 +17,6 @@ const DialogBox = ({ isOpen, onClose, component }: Props) => {
     <Modal onClose={onClose} isOpen={isOpen} isCentered>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Create appointment</ModalHeader>
         <ModalCloseButton />
         <ModalBody>{component}</ModalBody>
       </ModalContent>

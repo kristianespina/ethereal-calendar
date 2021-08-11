@@ -21,7 +21,7 @@ import { getSchedule } from "../../api/schedule";
 const Appointment = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const variant = useBreakpointValue({ base: "mobile", md: "md" });
-  const { list } = useAppSelector((state) => state.schedule);
+  const { list, filter } = useAppSelector((state) => state.schedule);
   const dispatch = useAppDispatch();
 
   // Handlers
@@ -35,14 +35,14 @@ const Appointment = () => {
   // Mount
   useEffect(() => {
     const fetchSchedule = async () => {
-      const { status, data } = await getSchedule();
+      const { status, data } = await getSchedule(filter);
       if (status === 200) {
         dispatch(updateSchedule(data));
       }
     };
     fetchSchedule();
     //eslint-disable-next-line
-  }, []);
+  }, [filter]);
 
   return (
     <>
@@ -55,9 +55,11 @@ const Appointment = () => {
           alignContent="center"
           w="full"
         >
-          <Text fontSize={18} fontWeight="bold" mb={4} ml={3}>
-            Appointments
-          </Text>
+          <Flex direction="row">
+            <Text fontSize={18} fontWeight="bold" mb={4} ml={3}>
+              Appointments
+            </Text>
+          </Flex>
           <Flex
             direction="column"
             gridGap={4}

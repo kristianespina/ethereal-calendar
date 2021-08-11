@@ -10,4 +10,5 @@ export type Schedule = {
 export type ScheduleState = {
   list: Schedule[];
   selected?: Schedule;
+  filter: string;
 };

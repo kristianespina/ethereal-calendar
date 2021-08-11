@@ -133,7 +133,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
   return (
     <Flex direction="column" w="full" gridGap={4} justifyContent="center">
       {/* Title */}
-      <Flex direction="row" w="full" display={display}>
+      <Flex direction="row" w="full">
         <Box
           position="absolute"
           fontSize={12}
@@ -145,6 +145,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
             cursor: "pointer",
             textDecoration: "underline",
           }}
+          display={display}
           onClick={handleBack}
         >
           Back
@@ -156,7 +157,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
           fontWeight="bold"
           color="gray.800"
         >
-          Update
+          {isUpdate ? "Update" : "Create appointment"}
         </Box>
       </Flex>
       {/* Contents */}
