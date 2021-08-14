@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Flex, Box, Button, Spacer, useToast } from "@chakra-ui/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 // Components
 import { TextInput, DateInput } from "../Input";
 // Hooks
@@ -131,8 +133,19 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
     dispatch(clearSelected());
     onClose && onClose();
   };
+
+  // Theming
+  const bgColor = onClose ? "white" : "gray.50";
   return (
-    <Flex direction="column" w="full" gridGap={4} justifyContent="center">
+    <Flex
+      direction="column"
+      w="full"
+      gridGap={4}
+      justifyContent="center"
+      bgColor={bgColor}
+      p={4}
+      borderRadius={8}
+    >
       {/* Title */}
       <Flex direction="row" w="full">
         <Box
@@ -156,7 +169,7 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
           textAlign="center"
           fontSize={18}
           fontWeight="bold"
-          color="gray.800"
+          color="gray.700"
         >
           {isUpdate ? "Update" : "Create appointment"}
         </Box>
@@ -187,6 +200,9 @@ const AppointmentView: React.FC<Props> = ({ isUpdate, onClose }) => {
             {isUpdate && <Button onClick={handleDelete}>Delete</Button>}
             <Spacer />
             <Button type="submit" colorScheme="green">
+              <Box mr={1}>
+                <FontAwesomeIcon icon={faEdit} />
+              </Box>
               {actionCaption}
             </Button>
           </Flex>

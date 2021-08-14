@@ -54,11 +54,11 @@ const Filter: React.FC<Props> = ({ onClose }) => {
             onChange={onChangeStatus}
           />
           <Flex direction="row" mt={4}>
-            <Button onClick={clearFilter} colorScheme="blue" variant="link">
+            <Button onClick={clearFilter} colorScheme="green" variant="link">
               Clear Filter
             </Button>
             <Spacer />
-            <Button type="submit" colorScheme="blue">
+            <Button type="submit" colorScheme="green">
               Filter
             </Button>
           </Flex>

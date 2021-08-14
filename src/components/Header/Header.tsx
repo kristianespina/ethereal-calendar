@@ -25,18 +25,30 @@ const Header = () => {
           alignItems="left"
           alignContent="center"
         >
-          <Text fontSize={18} fontWeight="bold" lineHeight={0.5}>
+          <Text
+            fontSize={18}
+            fontWeight="bold"
+            lineHeight={0.5}
+            color="gray.700"
+          >
             Welcome
           </Text>
-          <Text fontSize={36} fontWeight="bold">
+          <Text fontSize={36} fontWeight="bold" color="gray.700">
             Kristian Espina
           </Text>
           <Flex direction="row" gridGap={4}>
-            <Button colorScheme="blue" size="sm" onClick={onOpen}>
+            <Button
+              size="sm"
+              onClick={onOpen}
+              bgColor="blue.800"
+              color="white"
+              _hover={{ bg: "blue.700" }}
+              _active={{ bg: "blue.700", transform: "scale(0.98)" }}
+            >
               Create appointment
             </Button>
             <Button
-              colorScheme="blue"
+              color="blue.800"
               size="sm"
               variant="link"
               onClick={onOpenFilter}

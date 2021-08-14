@@ -56,7 +56,13 @@ const Appointment = () => {
           w="full"
         >
           <Flex direction="row">
-            <Text fontSize={18} fontWeight="bold" mb={4} ml={3}>
+            <Text
+              fontSize={18}
+              fontWeight="bold"
+              mb={4}
+              ml={3}
+              color="gray.600"
+            >
               Appointments
             </Text>
           </Flex>

@@ -24,7 +24,7 @@ const AppointmentEntry = ({ title, date, status, onClick }: Props) => {
       _hover={{ cursor: "pointer", bgColor: "gray.50" }}
       onClick={onClick}
     >
-      <Text fontSize={14} fontWeight="bold">
+      <Text fontSize={14} fontWeight="bold" color="gray.600">
         {title}
       </Text>
       <Flex direction="row">

@@ -12,7 +12,7 @@ const Error404 = () => {
       w="full"
     >
       <Image src={Rocket} maxW={300} />
-      <Text fontWeight="bold" fontSize={18}>
+      <Text fontWeight="bold" fontSize={18} color="gray.700">
         Nothing to see here
       </Text>
       <Text fontWeight="regular" fontSize={12} color="gray.500">
